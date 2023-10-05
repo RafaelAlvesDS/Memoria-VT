@@ -1,55 +1,12 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/dev/classes/config.php');
+header("refresh: 5; http://memoriavt.rf.gd/public/");
 
-$users = $C_BD->GetAll('select * from uol_users order by PostsUOL desc limit 100 ');
-//print_r($users);
+	echo '<title>Laravel Installed</title><div style="background: #e9ffed; border: 1px solid #b0dab7; padding: 15px;" align="center" >
+	<font size="5" color="#182e7a">Laravel is installed successfully.</font><br /><br />
+	<font size="4">Laravel is a Framework and doesn\'t have an index page.<br /><br />
+	You will be redirected to its "public" folder in 5 seconds...<br /><br />
+	Laravel is a clean and classy framework for PHP web development.
+
+Freeing you from spaghetti code, Laravel helps you create wonderful applications using simple, expressive syntax. Development should be a creative experience that you enjoy, not something that is painful. Enjoy the fresh air.
+</font></div>';
 ?>
-<!doctype html>
-<html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- Custom styles for this template -->
-        <link href="album.css" rel="stylesheet">
-        <title>Memória VT</title>
-    </head>
-    <body>
-
-        <div class="album py-5 bg-light">
-            <div class="container">
-                
-                    <div class="row">
-                        <?php for ($i = 0; $i < count($users); $i++) { if($users[$i]['Avatar']=='no avatar'){ continue; }$epoch = ($users[$i]['Cadastro']/1000)+2592000; $dt = new DateTime("@$epoch"); ?>
-                        <div class="col-md-2">
-                            <div class="card mb-4 box-shadow">
-                                <a href="/user_topicos.php?user=<?=$users[$i]['Id'];?>" target="_blank"><img class="card-img-top" src="<?= $users[$i]['Avatar']; ?>" alt="Card image cap"/></a>
-                                <div class="card-body">
-                                    <p class="card-text"><?= $users[$i]['Nome']; ?></p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        
-                                        <small class="text-muted"><?= $users[$i]['PostsUOL']; ?> posts<br/><?= $users[$i]['TopicosUOL'];  ?> tópicos<br/><?php echo $dt->format('d/m/Y'); ?> </small>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>   
-                        <?php } ?>
-                    </div>
-                
-            </div>
-        </div>
-
-
-
-    </body>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</html>

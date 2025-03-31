@@ -1,0 +1,29 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #bfa676, #000000);
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: #222;
+}
+
+.navbar a {
+    color: white;
+}
+
+.search-bar {
+    max-width: 300px;
+}
+
+.container {
+    flex: 1;
+}

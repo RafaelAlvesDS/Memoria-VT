@@ -36,6 +36,7 @@
         $(document).ready(function() {
             $('#search').on('keyup', function() {
                 var query = $(this).val();
+                console.log(query);
                 $.ajax({
                     url: "{{ route('search') }}",
                     type: "GET",

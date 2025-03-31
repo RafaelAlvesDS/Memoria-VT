@@ -1,5 +1,3 @@
-<footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-        <span class="text-muted">© 2024 My Laravel Site</span>
-    </div>
+<footer class="text-center mt-5 py-3" style="background-color: #222; color: white;">
+    <p>&copy; 2025 Meu Fórum. Todos os direitos reservados.</p>
 </footer>

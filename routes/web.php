@@ -13,10 +13,9 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[UserController::class, 'index']);
 
 Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/threads/{id_user}', [UserController::class, 'userThreads'])->name('user.threads');
 
 Route::get('/search', [UserController::class, 'search'])->name('search');

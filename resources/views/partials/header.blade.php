@@ -9,7 +9,10 @@
                 <li class="nav-item"><a class="nav-link" href="/">Usuários</a></li>
                 <li class="nav-item"><a class="nav-link" href="/threads">Tópicos</a></li>
                 <li class="nav-item">
-                    <input class="form-control search-bar" type="search" placeholder="Buscar...">
+                    <form action="{{ route('global.search') }}" method="GET" class="d-flex">
+                        <input class="form-control search-bar me-2" type="search" name="q" placeholder="Buscar usuários ou tópicos..." aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Buscar</button>
+                    </form>
                 </li>
             </ul>
         </div>
